@@ -32,6 +32,6 @@ services:
   osm2pgsql:
     image: iboates/osm2pgsql:latest
     environment:
-      PGPASSWORD: o2p_topo
+      PGPASSWORD: osmai
     volumes:
       - ./mnt:/mnt
