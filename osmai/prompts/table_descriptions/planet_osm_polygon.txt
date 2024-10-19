@@ -1,0 +1,4 @@
+Contains polygon features from the OpenStreetMap database.
+The name of every column except for "osm_id" and "way" corresponds to the name of the tag in OpenStreetMap.
+The geometry column is called "way".
+The coordinate reference system is EPSG:4326 (Web Mercator).

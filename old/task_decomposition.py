@@ -16,6 +16,8 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 
+load_dotenv()
+
 # MONKEYPATCHES:
 #
 # 1. Added markdown backtick fix to site-packages/langchain_community/utilities/sql_database.py
@@ -29,7 +31,7 @@ COUNTRY_DB_PORT = {"andorra": 5433,
 load_dotenv()
 
 # decompose task
-step_prompt = PromptTemplate.from_template(open("prompts/task_decomposer.txt").read())
+step_prompt = PromptTemplate.from_template(open("old/prompts/task_decomposer.txt").read())
 task_decomposer_chain = (
     RunnablePassthrough.assign()
     | step_prompt
@@ -97,9 +99,10 @@ Thought: I should look at the tables in the database to see what I can query.  T
 """
 
 engine = sa.create_engine(f'postgresql+psycopg2://osmai:osmai@localhost:{COUNTRY_DB_PORT[COUNTRY]}/osmai')
-table_descriptions = {table.split(".")[0]: open(table).read() for table in glob("prompts/table_descriptions/*.txt")}
+table_descriptions = {table.split(".")[0]: open(table).read() for table in glob("old/prompts/table_descriptions/*.txt")}
 db = SQLDatabase(engine,
-                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob("prompts/table_descriptions/*.txt")],
+                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob(
+                     "old/prompts/table_descriptions/*.txt")],
                  custom_table_info=table_descriptions)
 
 # analyze each step individually

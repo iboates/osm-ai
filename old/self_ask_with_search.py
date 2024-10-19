@@ -32,7 +32,8 @@ load_dotenv()
 engine = sa.create_engine(f'postgresql+psycopg2://osmai:osmai@localhost:{COUNTRY_DB_PORT[COUNTRY]}/osmai')
 table_descriptions = {table.split(".")[0]: open(table).read() for table in glob("prompts/table_descriptions/*.txt")}
 db = SQLDatabase(engine,
-                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob("prompts/table_descriptions/*.txt")],
+                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob(
+                     "prompts/table_descriptions/*.txt")],
                  custom_table_info=table_descriptions)
 sql_chain = SQLDatabaseChain.from_llm(llm=llm, db=db, verbose=True)
 agent_executor = create_sql_agent(

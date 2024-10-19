@@ -30,7 +30,7 @@ services:
       - ./mnt:/mnt
 
   osm2pgsql:
-    image: iboates/osm2pgsql:latest
+    image: iboates/osm2pgsql:1.11.0
     environment:
       PGPASSWORD: osmai
     volumes:

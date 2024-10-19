@@ -26,12 +26,13 @@ engine = sa.create_engine(f'postgresql+psycopg2://osmai:osmai@localhost:{COUNTRY
 
 llm = ChatOpenAI(model_name='gpt-4o')
 
-table_descriptions = {table.split(".")[0]: open(table).read() for table in glob("prompts/table_descriptions/*.txt")}
+table_descriptions = {table.split(".")[0]: open(table).read() for table in glob("old/prompts/table_descriptions/*.txt")}
 db = SQLDatabase(engine,
-                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob("prompts/table_descriptions/*.txt")],
+                 include_tables=[table.split("/")[-1].split(".")[0] for table in glob(
+                     "prompts/table_descriptions/*.txt")],
                  custom_table_info=table_descriptions)
 
-prompt = PromptTemplate.from_template(open("prompts/locale_descriptor.txt").read())
+prompt = PromptTemplate.from_template(open("old/prompts/locale_descriptor.txt").read())
 
 sql_chain = SQLDatabaseChain.from_llm(prompt=prompt, llm=llm, db=db, verbose=True)
 
