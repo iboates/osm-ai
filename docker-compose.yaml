@@ -35,4 +35,3 @@ services:
       PGPASSWORD: osmai
     volumes:
       - ./mnt:/mnt
-sb
