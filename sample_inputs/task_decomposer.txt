@@ -1,3 +1,4 @@
+Get me the grocery stores within 1000m of the node with osm_id 17807753
 Give me the farmland parcels that are within 5km of major power lines
 How many grocery stores are there in Paris?
 How many km of paved roadway is within 5km of the Seine river but is not in Paris?

@@ -120,7 +120,7 @@ for step in steps:
         agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         max_iterations=5,
         agent_executor_kwargs={"handle_parsing_errors": True},
-        # format_instructions=format_instructions
+        # format_instructions.txt=format_instructions.txt
     )
     generated_sql = agent_executor.invoke({"input": step})
     print(generated_sql["output"])

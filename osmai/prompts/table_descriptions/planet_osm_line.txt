@@ -1,5 +1,82 @@
+Below is the information about the table "planet_osm_line".
+
 Contains line features from the OpenStreetMap database.
-The name of every column except for "osm_id" and "way" corresponds to the name of the tag in OpenStreetMap.
 The geometry column is called "way".
 The columns "highway" describes a road, path, track, walkway, trackway, etc.
 The coordinate reference system is EPSG:4326 (Web Mercator).
+
+Here is the CREATE TABLE statement for this table. Every column except for "osm_id" and "way" corresponds to a tag name in OpenStreetMap.
+
+CREATE TABLE planet_osm_line (
+	osm_id BIGINT,
+	access TEXT,
+	"addr:housename" TEXT,
+	"addr:housenumber" TEXT,
+	"addr:interpolation" TEXT,
+	admin_level TEXT,
+	aerialway TEXT,
+	aeroway TEXT,
+	amenity TEXT,
+	area TEXT,
+	barrier TEXT,
+	bicycle TEXT,
+	brand TEXT,
+	bridge TEXT,
+	boundary TEXT,
+	building TEXT,
+	capital TEXT,
+	construction TEXT,
+	covered TEXT,
+	culvert TEXT,
+	cutting TEXT,
+	denomination TEXT,
+	disused TEXT,
+	ele TEXT,
+	embankment TEXT,
+	foot TEXT,
+	"generator:source" TEXT,
+	harbour TEXT,
+	highway TEXT,
+	historic TEXT,
+	horse TEXT,
+	intermittent TEXT,
+	junction TEXT,
+	landuse TEXT,
+	layer TEXT,
+	leisure TEXT,
+	lock TEXT,
+	man_made TEXT,
+	military TEXT,
+	motorcar TEXT,
+	name TEXT,
+	"natural" TEXT,
+	office TEXT,
+	oneway TEXT,
+	operator TEXT,
+	place TEXT,
+	population TEXT,
+	power TEXT,
+	power_source TEXT,
+	public_transport TEXT,
+	railway TEXT,
+	ref TEXT,
+	religion TEXT,
+	route TEXT,
+	service TEXT,
+	shop TEXT,
+	sport TEXT,
+	surface TEXT,
+	toll TEXT,
+	tourism TEXT,
+	"tower:type" TEXT,
+	tunnel TEXT,
+	water TEXT,
+	waterway TEXT,
+	wetland TEXT,
+	width TEXT,
+	wood TEXT,
+	z_order INTEGER,
+	way GEOEMTRY(LINESTRING,4326)
+)
+
+This concludes the information for the table "planet_osm_line".
