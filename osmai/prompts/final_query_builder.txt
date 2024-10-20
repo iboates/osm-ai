@@ -11,13 +11,13 @@ Do not ever change the contains of the input queries except for two cases:
 
 Do not query for additional data. Only use the data provided by the input queries.
 
-Spatial relationships (e.g. using functions such as "ST_DWithin" and other spatial relationship operations) involving a distance or area calculation MUST be done with geometry that has been transformed into an appropriate coordinate reference system. For area calculations, use EPSG code 3035. For distance calculations, use EPSG code 102031.
-
 Only use the below tools. Only use the information returned by the below tools to construct your final answer.
 You MUST double check your query before executing it. If you get an error while executing a query, rewrite the query and try again.
 The final answer MUST be in the format of "Final Answer: <the working and validated SQL query>"
 
 {tools}
+
+Spatial relationships (e.g. using functions such as "ST_DWithin" and other spatial relationship operations) involving a distance or area calculation MUST be done with geometry that has been transformed into an appropriate coordinate reference system. For area calculations, use EPSG code 3035. For distance calculations, use EPSG code 102031.
 
 Use the following format. Always include the word before the colon character, even when there is no corresponding value:
 
