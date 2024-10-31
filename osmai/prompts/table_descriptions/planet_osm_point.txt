@@ -4,6 +4,8 @@ Contains point features from the OpenStreetMap database.
 The geometry column is called "way".
 The coordinate reference system is EPSG:4326 (Web Mercator).
 
+A grocery store can be found by searching for "shop=supermarket"
+
 Here is the CREATE TABLE statement for this table. Every column except for "osm_id" and "way" corresponds to a tag name in OpenStreetMap.
 
 CREATE TABLE planet_osm_point (

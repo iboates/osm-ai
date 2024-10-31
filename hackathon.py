@@ -20,7 +20,7 @@ import osmai
 load_dotenv()
 
 
-# other shit to try
+# other things to try
 # 1. pre-made list of top X tag values for important tags to help query definition
 # 2. post-processing of final query to analyze for performance concerns (potentially with EXPLAIN)
 # 3. agent for interacting with nominatim for named places

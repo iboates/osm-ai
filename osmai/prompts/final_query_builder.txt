@@ -11,6 +11,9 @@ Do not ever change the contains of the input queries except for two cases:
 
 Do not query for additional data. Only use the data provided by the input queries.
 
+The output query MUST contain the geometries of the input feature sets.
+Make very sure that you remove the LIMIT statements from the previous feature set queries before providing the final query.
+
 Only use the below tools. Only use the information returned by the below tools to construct your final answer.
 You MUST double check your query before executing it. If you get an error while executing a query, rewrite the query and try again.
 The final answer MUST be in the format of "Final Answer: <the working and validated SQL query>"

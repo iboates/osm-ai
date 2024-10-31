@@ -12,17 +12,17 @@ services:
     ports:
       - "5433:5432"
 
-  db_france:
-    image: postgis/postgis:latest
-    environment:
-      POSTGRES_DB: osmai
-      POSTGRES_USER: osmai
-      POSTGRES_PASSWORD: osmai
-    volumes:
-      - ./pgdata/france:/var/lib/postgresql/data
-      - ./mnt:/mnt
-    ports:
-      - "5432:5432"
+#  db_france:
+#    image: postgis/postgis:latest
+#    environment:
+#      POSTGRES_DB: osmai
+#      POSTGRES_USER: osmai
+#      POSTGRES_PASSWORD: osmai
+#    volumes:
+#      - ./pgdata/france:/var/lib/postgresql/data
+#      - ./mnt:/mnt
+#    ports:
+#      - "5432:5432"
 
   osmium:
     image: iboates/osmium:latest
